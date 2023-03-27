@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"> <!-- Указание кодировки документа -->
+    <title>Расчет соотношения матрица-наполнитель</title>
+</head>
+<body>
+    <h1 style="color:black; background-color: rgba(237, 237, 246, 0.467); font-family:Arial; font-size: 25px;">Расчет соотношения матрица-наполнитель</h1>
+    <form action="" method="post" </form>>
+    <style> 
+
+    /* Стиль кнопок "рассчитать" и "сбросить" */
+    .button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    }
+    /* Стиль кнопоки "Вернуться на главную" */
+    .link {
+    color: #4CAF50;
+    text-decoration: none;
+    }
+    /* Стиль полей для ввода значений */
+    input {
+    height: 20px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+
+    form {
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+    </style>
+        
+    <fieldset>
+        <legend> Введите параметры для модели </legend>
+    <p>
+	    <label for="parameter1">Введите Плотность, кг/м3</label>
+	    <input type="text" name="parameter1" required>
+    </p><p>
+	    <label for="parameter2">Введите Модуль упругости, ГПа</label>
+	    <input type="text" name="parameter2" required>
+    </p><p>
+	    <label for="parameter3">Введите Количество отвердителя, м.%</label>
+	    <input type="text" name="parameter3" required>
+    </p><p>
+        <label for="parameter4">Введите Содержание эпоксидных групп,%_2</label>
+	    <input type="text" name="parameter4" required>
+    </p><p>
+        <label for="parameter5">Введите Температура вспышки, С_2</label>
+	    <input type="text" name="parameter5" required>
+    </p><p>
+        <label for="parameter6">Введите Поверхностная плотность, г/м2</label>
+	    <input type="text" name="parameter6" required>
+    </p><p>
+        <label for="parameter7">Введите Модуль упругости при растяжении, ГПа</label>
+	    <input type="text" name="parameter7" required>
+    </p><p>
+        <label for="parameter8">Введите Прочность при растяжении, МПа</label>
+	    <input type="text" name="parameter8" required>
+    </p><p>
+        <label for="parameter9">Введите Потребление смолы, г/м2</label>
+	    <input type="text" name="parameter9" required>
+    </p><p>
+        <label for="parameter10">Введите Угол нашивки, град</label>
+	    <input type="number" name="parameter10" min='0' max='90' step='1' required>
+    </p><p>
+        <label for="parameter11">Введите Шаг нашивки</label>
+	    <input type="text" name="parameter11" required>
+    </p><p>
+        <label for="parameter12">Введите Плотность нашивки</label>
+	    <input type="text" name="parameter12" required>
+	</p>
+    </fieldset>
+    <p>
+        <input type="submit" value="Рассчитать" class="button">
+        <input type="reset" value="Сбросить" class="button">
+    </p>    
+    </form>
+    <p>
+    {% if message %}
+        <p><b style="font-size: 20px; color: red">{{message}}</b></p>
+    {% endif %}
+    
+      
+    </p>
+</body>
+<footer>
+    <p>
+        <a href="{{url_for('choose_prediction_method')}}" class="link">Вернуться на главную страницу</a>
+    </p>
+</footer>
+
+</html>

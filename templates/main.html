@@ -1,0 +1,123 @@
+<!DOCTYPE html> <!-- объявление типа документа. -->
+<html lang="ru">
+<header>
+    <meta charset="UTF-8"> <!-- кодировка символов на странице -->
+  <h2>Прогнозирование конечных свойств новых материалов (композиционных материалов)</h2>
+</header>
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- настройка масштабирования содержимого для мобильных устройств. -->
+    <style>
+      /* Устанавливаем стиль box-sizing для всех элементов на странице */
+    * {
+      box-sizing: border-box; 
+    }
+    /* Задаём шрифт для всего тела документа */
+    body {
+      font-family: sans-serif;
+    }
+    /* Задаем шрифт для заголовка h2 внутри тега header */
+    header h2 {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Стиль заголовка */
+    header {
+      font-family: monospace;
+      background-color: rgba(237, 237, 246, 0.467);
+      padding: 20px;
+      text-align: center;
+      font-size: 20px;
+      color: black;
+    }
+    /* Стиль кнопки */
+    .button {
+      display: inline-block;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+    /* Анимация при наведении на кнопку */
+    .button:hover {
+      background-color: #357a38;
+    }
+
+    
+
+    /* Устанавливаем nav слева от article */
+    nav {
+        float: left;
+        width: 30%;
+        background: #ffffff;
+        padding: 20px;
+    }
+    
+    /* Стиль списка внутри меню */
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    article {
+      float: left;
+      padding: 15px;
+      width: 70%;
+      background-color: #f1f1f1;
+      height: auto; 
+    }
+    
+    /* Очищаем поплавки после nav и article элементов, чтобы содержимое страницы не вылезало за их границы. */
+    section::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    
+    /* Устанавливаем свойства для экранов с максимальной шириной 600px и меньше, 
+    чтобы два столбца размещались один над другим */
+    @media (max-width: 600px) {
+      nav, article {
+        width: 100%;
+        height: auto;
+      }
+    }
+    </style>
+    </head>
+    <body>    
+
+    
+    <section>
+      <nav>
+        <ul>
+          <li><a href="{{url_for('nn_predict')}}">
+            <span class="button">Спрогнозировать значение матрица-наполнитель</span>
+          </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <article>
+        <h1>Композиционные материалы</h1>
+        <p>Композиционные материалы — это искусственно созданные материалы, состоящие из нескольких других с четкой границей между ними.
+            Композиты обладают теми свойствами, которые не наблюдаются у компонентов по отдельности. 
+            При этом композиты являются монолитным материалом, т. е. компоненты материала неотделимы друг от друга без разрушения конструкции в целом. </p>
+            <p>Созданные прогнозные модели помогут сократить количество проводимых испытаний, а также пополнить базу данных материалов возможными новыми характеристиками материалов, и цифровыми двойниками новых композитов.</p>
+        <p>В данном веб-приложении с помощью нейронной сети прогнозируются соотношение 
+             "Матрица-наполнитель" в композиционных материалах, на основе
+            введенных пользователем значений.
+        </p>
+      </article>
+    </section>
+    
+    <footer>
+      <p> Выполнил: Самойличенко А.А.</p>
+    </footer>
+</body>
+</html>
